@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from PIL import ImageTk, Image  # To use PNG icons (requires pillow)
+from PIL import ImageTk, Image 
 
 # --- Theme Colors & Emoji Icons ---
 BG_COLOR = "#FAF4E5"
@@ -10,8 +10,8 @@ LISTBOX_FG = "#8D7C7B"
 BUTTON_ADD_BG = "#B7EDE8"
 BUTTON_DELETE_BG = "#F6A6B2"
 
-ADD_ICON = "🐰"     # Rabbit (Add task)
-DELETE_ICON = "🐻"  # Bear (Delete task)
+ADD_ICON = "🐰" 
+DELETE_ICON = "🐻" 
 
 def add_task():
     task = entry_task.get()
@@ -30,18 +30,17 @@ def delete_task():
 
 def main():
     window = Tk()
-    window.title("🐼 To-Do List")  # Panda emoji in title!
+    window.title("🐼 To-Do List") 
     window.geometry("400x500")
     window.config(bg=BG_COLOR)
     window.resizable(False, False)
 
     # --- App Icon (Window Icon) ---
-    # Use your own cute icon file, e.g. "panda_icon.png"
     try:
         icon_img = ImageTk.PhotoImage(Image.open("panda_icon.png"))
         window.iconphoto(False, icon_img)
     except Exception:
-        pass  # Continue without icon if not available
+        pass
 
     lbl_title = Label(window, text="To-Do List 🐱", bg=TITLE_COLOR, fg="white",
                       font=("Arial rounded MT Bold", 24, "bold"))
@@ -84,3 +83,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
